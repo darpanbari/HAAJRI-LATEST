@@ -1,0 +1,33 @@
+.custom-tooltip-btn {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 9px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+  }
+  
+  .custom-tooltip-btn2 {
+    height: 32px !important;
+    width: 32px !important;
+    border-radius: 5px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+  }
+
+  .btn-width {
+    width: 120px;
+    font-size: 12px !important;
+    border-radius: 10px !important;
+    padding: 4px 0px !important;
+    /* padding-bottom: 6px !important; */
+  }
+  .btn-width1 {
+    font-size: 12px !important;
+    border-radius: 10px !important;
+    padding: 4px 10px !important;
+    /* padding-bottom: 6px !important; */
+  }
