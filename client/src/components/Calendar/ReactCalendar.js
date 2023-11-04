@@ -6,6 +6,7 @@ import listPlugin from '@fullcalendar/list';
 
 import './ReactCalendar.css';
 
+
 const ReactCalendar = () => {
   const events = [
     { title: 'Workshops', start: '2023-08-08' },

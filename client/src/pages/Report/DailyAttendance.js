@@ -11,6 +11,9 @@ import Breadcrumb from "../../components/Breadcrumb";
 import HeaderSectionWithElements from "../../components/HeaderSectionWithElements/HeaderSectionWithElements";
 import TextInputField from "../../components/Input&Buttons/TextInputField";
 import SelectInputField from "../../components/Input&Buttons/SelectInputField";
+import ModalComponent from "../../components/ModalComponent";
+import './DailyAttendance.css';
+import TextBtnSameLength from "../../components/IconButton/TextBtnSameLength";
 
 const DailyAttendance = () => {
   const [data] = useState([
@@ -336,7 +339,7 @@ const DailyAttendance = () => {
 
         <div className="d-flex flex-column flex-grow-1 right-container">
           {/* Top Header*/}
-          <HeaderSectionWithElements/>
+          <HeaderSectionWithElements />
 
           <div className="d-flex flex-col2 justify-content-between">
             <div className="mb-2">
@@ -346,6 +349,71 @@ const DailyAttendance = () => {
                 breadcrumb2="Attendance"
               />
             </div>
+
+            <div className="breadcrumb-rightside-btn me-5 d-flex">
+              <div className="breadcrumb-rightside-btn d-flex">
+                <ModalComponent
+                  modalTitle="Attendance Detail"
+                  modalWidth="custom-width-2"
+                  modalContent={
+                    <>
+                      <div className="row">
+                        <div className="col-md-6">
+                        <div className="form-group">
+                            <label className="modalDataLable">Name:</label>
+                            <span className="modalDataSpan">Chirag Prajapati</span>
+                          </div>
+                          <div className="form-group">
+                            <label className="modalDataLable">Date:</label>
+                            <span className="modalDataSpan">October 25, 2023</span>
+                          </div>
+                          <div className="form-group">
+                            <label className="modalDataLable">In Time:</label>
+                            <span className="modalDataSpan">09:00 AM</span>
+                          </div>
+                          <div className="form-group">
+                            <label className="modalDataLable">Out Time:</label>
+                            <span className="modalDataSpan">05:00 PM</span>
+                          </div>
+                          <div className="form-group">
+                            <label className="modalDataLable">Attendance:</label>
+                            <span className="modalDataSpan">Present</span>
+                          </div>
+                          
+                        </div>
+                        <div className="col-md-6">
+                        <div className="form-group">
+                            <label className="modalDataLable">User ID:</label>
+                            <span className="modalDataSpan">12345</span>
+                          </div>
+                          <div className="form-group">
+                            <label className="modalDataLable">Location:</label>
+                            <span className="modalDataSpan">Office XYZ</span>
+                          </div>   
+                          <div className="form-group">
+                            <label className="modalDataLable">Department:</label>
+                            <span className="modalDataSpan">HR Department</span>
+                          </div>
+                          <div className="form-group">
+                            <label className="modalDataLable">Designation:</label>
+                            <span className="modalDataSpan">HR Manager</span>
+                          </div>
+                         
+                          <div className="form-group">
+                            <label className="modalDataLable">Status:</label>
+                            {/* <TextBtnSameLength
+                              keyName={active}
+                              className="w-75"
+                            /> */}
+                            <span className="modalDataSpan btn btn-info border-0 text-white btn-width1">Active</span>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  }
+                />
+              </div>
+            </div>
           </div>
 
           <div>
@@ -354,27 +422,26 @@ const DailyAttendance = () => {
                 <div className="mx-4 w-100">
                   <div className="d-flex div-flex-col justify-content-end mb-3">
                     <div className="w-25 me-3 mt-1">
-                    <TextInputField
-                      type="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                    />
+                      <TextInputField
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                      />
                     </div>
                     <div className="w-25 me-4">
-                     
                       <SelectInputField
-                    label="m"
-                      options={[
-                        { value: "", label: "Select Location" },
-                        { value: "Mumbai", label: "Mumbai" },
-                        { value: "Pune", label: "Pune" },
-                        { value: "Bangalore", label: "Bangalore" },
-                      ]}
-                      selectedValue={selectedLocation}
-                      onSelect={(e) => setSelectedLocation(e.target.value)}
-                      className="p-2"
-                      noLabel={true}
-                    />
+                        label="m"
+                        options={[
+                          { value: "", label: "Select Location" },
+                          { value: "Mumbai", label: "Mumbai" },
+                          { value: "Pune", label: "Pune" },
+                          { value: "Bangalore", label: "Bangalore" },
+                        ]}
+                        selectedValue={selectedLocation}
+                        onSelect={(e) => setSelectedLocation(e.target.value)}
+                        className="p-2"
+                        noLabel={true}
+                      />
                     </div>
                     <div className="w-25 d-hide"></div>
                   </div>

@@ -112,6 +112,13 @@ const sideNavBarDatas = [
     to: "/payroll/payslip",
   },
   {
+    moduleName: "OTP Mail",
+    icon: "AiOutlinePayCircle",
+    id: 17,
+    select: false,
+    to: "/otp-mail",
+  },
+  {
     moduleName: "Indicator",
     icon: "BiTimer",
     id: 8,

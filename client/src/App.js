@@ -42,6 +42,7 @@ import POSDashboard from "./pages/Dashboard/POSDashboard";
 import CRMDashboard from "./pages/Dashboard/CRMDashboard";
 import HRMDashboard from "./pages/Dashboard/HRMDashboard";
 import AccessModule from "./pages/AccessModule/AccessModule";
+import OtpMail from "./pages/OtpMail";
 
 function App() {
   
@@ -95,6 +96,7 @@ function App() {
           <Route path="/support-ticket/faq" element={<FAQ1 />} />
           <Route path="/assets" element={<Assets />} />
           <Route path="/notes" element={<Notes />} />
+          <Route path="/otp-mail" element={<OtpMail />} />
 
           {/* hr admin */}
           <Route path="/hr-admin/award" element={<Award />} />
