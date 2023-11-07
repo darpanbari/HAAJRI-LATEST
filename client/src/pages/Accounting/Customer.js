@@ -151,13 +151,11 @@ const Customer = () => {
                               value={formData.name}
                               onChange={handleInputChange}
                               className="w-50 me-3"
-                              
                             />
                             <TextInputField
                               label="Contact"
                               type="text"
                               name="contact"
-
                               placeholder="Enter Contact"
                               value={formData.contact}
                               onChange={handleInputChange}
@@ -167,7 +165,6 @@ const Customer = () => {
                               label="Email"
                               type="email"
                               name="email"
-
                               placeholder="Enter Email"
                               value={formData.email}
                               onChange={handleInputChange}
@@ -350,8 +347,8 @@ const Customer = () => {
 
           <div>
             <div className="">
-              <div className="border-4 py-4 bg-custom-white mx-4 mb-4 custom-border-radius custom-shadow scroller-div">
-                <div className="table-responsive1">
+              <div className="border-4 py-4 bg-custom-white mx-4 mb-4 custom-border-radius custom-shadow">
+                <div>
                   <div className="d-flex justify-content-between pb-4 px-4">
                     <EntriesPerPage
                       value={entriesPerPage}
@@ -362,68 +359,70 @@ const Customer = () => {
                     </div>
                   </div>
 
-                  <Table hover>
-                    <thead className="table-head">
-                      <tr>
-                        {[
-                          { label: "id", className: "ms-3" },
-                          { label: "name" },
-                          { label: "contact" },
-                          { label: "email" },
-                          { label: "balance" },
-                          { label: "action" },
-                        ].map((header) => (
-                          <SortHeader
-                            key={header.label}
-                            label={header.label}
-                            orderBy={orderBy}
-                            order={order}
-                            onClick={handleSort}
-                            className={header.className}
-                          />
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="y-center">
-                      {filteredData.slice(0, entriesPerPage).map((ticket) => (
-                        <tr key={ticket.id}>
-                          <td className="text-start ps-4 fw-bold">
-                            <button
-                              type="button"
-                              className="btn btn-outline-success font-size-14 py-2"
-                            >
-                              {ticket.id}
-                            </button>
-                          </td>
-                          <td>{ticket.name}</td>
-                          <td>{ticket.contact}</td>
-                          <td>{ticket.email}</td>
-
-                          <td>{ticket.balance}</td>
-                          <td className="text-center">
-                            <div className="mx-2 d-flex justify-content-center">
-                              <ActionIconsBtn
-                                title="View"
-                                icon={<TbEye />}
-                                className="me-2 orange-2"
-                              />
-
-                              <ActionIconsBtn
-                                title="Edit"
-                                icon={<BiSolidEdit />}
-                                className="me-2 bg-sky-2"
-                              />
-                              <ActionIconsBtn
-                                title="Delete"
-                                icon={<RiDeleteBin5Line />}
-                                className="red-icon"
-                              />
-                            </div>
-                          </td>
+                  <div className="table-responsive">
+                    <table className="table table-hover">
+                      <thead className="table-head">
+                        <tr>
+                          {[
+                            { label: "id", className: "ms-3" },
+                            { label: "name" },
+                            { label: "contact" },
+                            { label: "email" },
+                            { label: "balance" },
+                            { label: "action" },
+                          ].map((header) => (
+                            <SortHeader
+                              key={header.label}
+                              label={header.label}
+                              orderBy={orderBy}
+                              order={order}
+                              onClick={handleSort}
+                              className={header.className}
+                            />
+                          ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </Table>
+                      </thead>
+                      <tbody className="y-center">
+                        {filteredData.slice(0, entriesPerPage).map((ticket) => (
+                          <tr key={ticket.id}>
+                            <td className="text-start ps-4 fw-bold">
+                              <button
+                                type="button"
+                                className="btn btn-outline-success font-size-14 py-2"
+                              >
+                                {ticket.id}
+                              </button>
+                            </td>
+                            <td>{ticket.name}</td>
+                            <td>{ticket.contact}</td>
+                            <td>{ticket.email}</td>
+
+                            <td>{ticket.balance}</td>
+                            <td className="text-center">
+                              <div className="mx-2 d-flex justify-content-center">
+                                <ActionIconsBtn
+                                  title="View"
+                                  icon={<TbEye />}
+                                  className="me-2 orange-2"
+                                />
+
+                                <ActionIconsBtn
+                                  title="Edit"
+                                  icon={<BiSolidEdit />}
+                                  className="me-2 bg-sky-2"
+                                />
+                                <ActionIconsBtn
+                                  title="Delete"
+                                  icon={<RiDeleteBin5Line />}
+                                  className="red-icon"
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
 
                   <h6 className="p-4 fw-normal">
                     Showing 1 to {Math.min(entriesPerPage, data.length)} of{" "}

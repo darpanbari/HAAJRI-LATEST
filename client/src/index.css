@@ -296,19 +296,33 @@ nav ol li {
 }
 
 
-@media (max-width: 1515px) {
+
+@media (max-width: 1520px) {
   .scroller-div {
     overflow-x: auto;
     white-space: nowrap;
     /* width: 100% !important; */
   }
-
   .table-responsive1 {
     display: inline-block;
     white-space: normal;
-    width: 1500px !important;
+    width: 100% !important;
   }
 }
+/* @media (max-width: 2515px) {
+  .scroller-div {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-responsive2 {
+    display: inline-block;
+    white-space: normal;
+    width: 1515px !important;
+  }
+} */
+
+
 @media screen and (max-width: 1040px) {
   .custom-title {
     display: none !important;
@@ -330,10 +344,11 @@ nav ol li {
     flex-direction: column !important;
   }
 }
-@media (max-width: 1516px) {
+
+@media (max-width: 3000px) {
   .right-container {
-    flex-grow: 1; /* To allow the container to grow within the available space */
-    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    flex-grow: 1; 
+    overflow-x: hidden;
   }
 }
 

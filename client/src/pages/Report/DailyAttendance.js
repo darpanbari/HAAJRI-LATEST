@@ -12,7 +12,7 @@ import HeaderSectionWithElements from "../../components/HeaderSectionWithElement
 import TextInputField from "../../components/Input&Buttons/TextInputField";
 import SelectInputField from "../../components/Input&Buttons/SelectInputField";
 import ModalComponent from "../../components/ModalComponent";
-import './DailyAttendance.css';
+import "./DailyAttendance.css";
 import TextBtnSameLength from "../../components/IconButton/TextBtnSameLength";
 
 const DailyAttendance = () => {
@@ -359,13 +359,17 @@ const DailyAttendance = () => {
                     <>
                       <div className="row">
                         <div className="col-md-6">
-                        <div className="form-group">
+                          <div className="form-group">
                             <label className="modalDataLable">Name:</label>
-                            <span className="modalDataSpan">Chirag Prajapati</span>
+                            <span className="modalDataSpan">
+                              Chirag Prajapati
+                            </span>
                           </div>
                           <div className="form-group">
                             <label className="modalDataLable">Date:</label>
-                            <span className="modalDataSpan">October 25, 2023</span>
+                            <span className="modalDataSpan">
+                              October 25, 2023
+                            </span>
                           </div>
                           <div className="form-group">
                             <label className="modalDataLable">In Time:</label>
@@ -376,36 +380,43 @@ const DailyAttendance = () => {
                             <span className="modalDataSpan">05:00 PM</span>
                           </div>
                           <div className="form-group">
-                            <label className="modalDataLable">Attendance:</label>
+                            <label className="modalDataLable">
+                              Attendance:
+                            </label>
                             <span className="modalDataSpan">Present</span>
                           </div>
-                          
                         </div>
                         <div className="col-md-6">
-                        <div className="form-group">
+                          <div className="form-group">
                             <label className="modalDataLable">User ID:</label>
                             <span className="modalDataSpan">12345</span>
                           </div>
                           <div className="form-group">
                             <label className="modalDataLable">Location:</label>
                             <span className="modalDataSpan">Office XYZ</span>
-                          </div>   
+                          </div>
                           <div className="form-group">
-                            <label className="modalDataLable">Department:</label>
+                            <label className="modalDataLable">
+                              Department:
+                            </label>
                             <span className="modalDataSpan">HR Department</span>
                           </div>
                           <div className="form-group">
-                            <label className="modalDataLable">Designation:</label>
+                            <label className="modalDataLable">
+                              Designation:
+                            </label>
                             <span className="modalDataSpan">HR Manager</span>
                           </div>
-                         
+
                           <div className="form-group">
                             <label className="modalDataLable">Status:</label>
                             {/* <TextBtnSameLength
                               keyName={active}
                               className="w-75"
                             /> */}
-                            <span className="modalDataSpan btn btn-info border-0 text-white btn-width1">Active</span>
+                            <span className="modalDataSpan btn btn-info border-0 text-white btn-width1">
+                              Active
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -487,56 +498,93 @@ const DailyAttendance = () => {
 
           <div>
             <div className="">
-              <div className="border-4 py-4 m-4 custom-border-radius bg-custom-white custom-shadow scroller-div">
-                <div className="table-responsive1">
-                  <div className="d-flex justify-content-between pb-4 px-4">
-                    <EntriesPerPage
-                      value={entriesPerPage}
-                      onChange={handleEntriesPerPage}
-                    />
-                    <div>
-                      <SearchBtn data={data} onDataSearch={handleSearchData} />
+              <div className="border-4 py-4 m-4 custom-border-radius bg-custom-white custom-shadow">
+                <div>
+                  <div>
+                    <div className="d-flex justify-content-between pb-4 px-4">
+                      <EntriesPerPage
+                        value={entriesPerPage}
+                        onChange={handleEntriesPerPage}
+                      />
+                      <div>
+                        <SearchBtn
+                          data={data}
+                          onDataSearch={handleSearchData}
+                        />
+                      </div>
                     </div>
+                    <div className="table-responsive">
+                      <table className="table table-hover">
+                        <thead className="table-head">
+                          <tr>
+                            <th className="ps-4">#</th>
+                            <th>DATE</th>
+                            <th>FULL NAME</th>
+                            <th>USER ID</th>
+                            <th>SHIFT</th>
+                            <th>IN-TIME</th>
+                            <th>OUT-TIME</th>
+                            <th>HOURS</th>
+                            <th>IN-OUT</th>
+                            <th>Status</th>
+                            <th>DATE</th>
+                            <th>FULL NAME</th>
+                            <th>USER ID</th>
+                            <th>SHIFT</th>
+                            <th>IN-TIME</th>
+                            <th>OUT-TIME</th>
+                            <th>HOURS</th>
+                            <th>IN-OUT</th>
+                            <th>Status</th>
+                            <th>DATE</th>
+                            <th>FULL NAME</th>
+                            <th>USER ID</th>
+                            <th>SHIFT</th>
+                            <th>IN-TIME</th>
+                            <th>OUT-TIME</th>
+                            <th>HOURS</th>
+                            <th>IN-OUT</th>
+                            <th>Status</th>
+                            <th>HOURS</th>
+                            <th>IN-OUT</th>
+                            <th>Status</th>
+                            <th>DATE</th>
+                            <th>FULL NAME</th>
+                            <th>USER ID</th>
+                            <th>SHIFT</th>
+                            <th>IN-TIME</th>
+                            <th>OUT-TIME</th>
+                            <th>HOURS</th>
+                            <th>IN-OUT</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody className="y-center">
+                          {filteredData
+                            .slice(0, entriesPerPage)
+                            .map((ddata, i) => (
+                              <tr key={i}>
+                                <td className="ps-4 fw-bold">{ddata.id}</td>
+                                <td>{ddata.date.replace(/-/g, "/")}</td>
+                                <td>{ddata.name}</td>
+                                <td>{ddata.userId}</td>
+                                <td>{ddata.shift}</td>
+                                <td>{ddata.inTime}</td>
+                                <td>{ddata.outTime}</td>
+                                <td>{ddata.hours}</td>
+                                <td>{ddata.inOut}</td>
+                                <td>{ddata.status}</td>
+                              </tr>
+                            ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <p className="p-4">
+                      Showing 1 to {Math.min(entriesPerPage, data.length)} of{" "}
+                      {data.length} entries
+                    </p>
                   </div>
-
-                  <Table hover>
-                    <thead className="table-head">
-                      <tr>
-                        <th className="ps-4">#</th>
-                        <th>DATE</th>
-                        <th>FULL NAME</th>
-                        <th>USER ID</th>
-                        <th>SHIFT</th>
-                        <th>IN-TIME</th>
-                        <th>OUT-TIME</th>
-                        <th>HOURS</th>
-                        <th>IN-OUT</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody className="y-center">
-                      {filteredData.slice(0, entriesPerPage).map((ddata, i) => (
-                        <tr key={i}>
-                          <td className="ps-4 fw-bold">{ddata.id}</td>
-                          <td>{ddata.date.replace(/-/g, "/")}</td>
-                          <td>{ddata.name}</td>
-
-                          <td>{ddata.userId}</td>
-                          <td>{ddata.shift}</td>
-                          <td>{ddata.inTime}</td>
-                          <td>{ddata.outTime}</td>
-                          <td>{ddata.hours}</td>
-                          <td>{ddata.inOut}</td>
-                          <td>{ddata.status}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </Table>
-
-                  <p className="p-4">
-                    Showing 1 to {Math.min(entriesPerPage, data.length)} of{" "}
-                    {data.length} entries
-                  </p>
                 </div>
               </div>
             </div>
