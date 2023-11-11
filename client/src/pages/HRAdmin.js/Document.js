@@ -141,19 +141,23 @@ const Document = () => {
 
                       <div className="d-flex">
                         <div className="mb-3 w-50 mx-2">
-                          <label htmlFor="Name" className="form-label">
+                          <label htmlFor="fileInput1" className="form-label">
                             Document
                           </label>
                           <label
-                            htmlFor="fileInput1"
-                            className="btn green-2 justify-content-center setting-fcont-btn text-white d-flex align-items-center font-size-12 mb-1 border-0"
-                          >
-                            <CgSoftwareUpload className="me-1 fs-6 text-white" />
-                            Choose file here
-                          </label>
+                              htmlFor="fileInput4"
+                              className="btn green-2   setting-fcont-btn justify-content-center text-center text-white d-flex align-items-center font-size-12 mb-1 border-0"
+                            >
+                              <CgSoftwareUpload className="me-1 fs-6 text-white" />
+                              Choose file here
+                            </label>
+                            <input
+                              type="file"
+                              id="fileInput4"
+                              style={{ display: "none" }}
+                            />
                         </div>
                         <div className="mb-3 w-50 mx-2">
-                      
                           <SelectInputField
                             label="Role"
                             options={roleOptions}
@@ -165,7 +169,7 @@ const Document = () => {
                         </div>
                       </div>
                       <div className="mb-3 mx-2">
-                      <TextAreaField
+                        <TextAreaField
                           label="Description"
                           value={formData.description}
                           onChange={handleInputChange}

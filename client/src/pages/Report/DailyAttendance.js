@@ -527,36 +527,7 @@ const DailyAttendance = () => {
                             <th>HOURS</th>
                             <th>IN-OUT</th>
                             <th>Status</th>
-                            <th>DATE</th>
-                            <th>FULL NAME</th>
-                            <th>USER ID</th>
-                            <th>SHIFT</th>
-                            <th>IN-TIME</th>
-                            <th>OUT-TIME</th>
-                            <th>HOURS</th>
-                            <th>IN-OUT</th>
-                            <th>Status</th>
-                            <th>DATE</th>
-                            <th>FULL NAME</th>
-                            <th>USER ID</th>
-                            <th>SHIFT</th>
-                            <th>IN-TIME</th>
-                            <th>OUT-TIME</th>
-                            <th>HOURS</th>
-                            <th>IN-OUT</th>
-                            <th>Status</th>
-                            <th>HOURS</th>
-                            <th>IN-OUT</th>
-                            <th>Status</th>
-                            <th>DATE</th>
-                            <th>FULL NAME</th>
-                            <th>USER ID</th>
-                            <th>SHIFT</th>
-                            <th>IN-TIME</th>
-                            <th>OUT-TIME</th>
-                            <th>HOURS</th>
-                            <th>IN-OUT</th>
-                            <th>Status</th>
+                           
                           </tr>
                         </thead>
                         <tbody className="y-center">
